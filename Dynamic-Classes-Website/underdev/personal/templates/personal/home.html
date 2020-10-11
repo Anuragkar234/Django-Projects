@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div style = "border: 2px solid #0000">
+    <h1>This is body of the page</h1>
+    <p>Putting stuff in the body</p>
+    {{some_string}}
+    {{some_number}}
+
+    {% for account in accounts %}
+      <p>{{account.username}} {{account.date_joined}}</p>
+     
+    {% endfor %}
+
+    
+</div>
+
+{% endblock content %}

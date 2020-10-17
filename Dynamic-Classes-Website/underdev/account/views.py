@@ -18,10 +18,10 @@ def registration_view(request):
             return redirect('home')
 
         else:
-            context = ['registration_form']
+            context['registration_form'] = form
     else: # this will a GET request
         form = RegistrationForm()
-        context = ['registration_form']
+        context['registration_form'] = form
 
-    return render(request, 'templates/account/register.html', context)
+    return render(request, 'accounts/register.html/', context)
 

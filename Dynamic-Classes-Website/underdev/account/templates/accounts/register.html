@@ -9,17 +9,17 @@
             {{field.label_tag}}
             {{field}}
 
-            {{% if field.help_text %}}
+            {% if field.help_text %}
             <small style = "color: blueviolet;">
                 {{field.help_text}}
             </small>
-            {{% endif %}}
+            {% endif %}
 
-            {{% for error in field.errors %}}
+            {% for error in field.errors %}
                 <p style = "color: crimson;">
                     {{error}}
                 </p>
-            {{% endfor %}}
+            {% endfor %}
         </p>
     {% endfor %}
     <button type="submit">Register</button>

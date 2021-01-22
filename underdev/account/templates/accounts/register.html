@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h2>Register</h2>
+<!--Making the form-->
+<form method = "POST">{% csrf_token %} <!--Its is and encryption token, that changes if stays for long to refreshes the page-->
+    {% for field in registration_form %}
+        <p>
+            {{field.label_tag}}
+            {{field}}
+
+            {% if field.help_text %}
+            <small style = "color: blueviolet;">
+                {{field.help_text}}
+            </small>
+            {% endif %}
+
+            {% for error in field.errors %}
+                <p style = "color: crimson;">
+                    {{error}}
+                </p>
+            {% endfor %}
+        </p>
+    {% endfor %}
+    <button type="submit">Register</button>
+</form>
+
+{% endblock content %}

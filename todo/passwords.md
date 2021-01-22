@@ -1,0 +1,1 @@
+superuser = bubun/password-bubun
